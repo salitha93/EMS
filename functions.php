@@ -25,6 +25,10 @@
 		header("location: ../login.php");
 	}
 
+	if (isset($_GET['paysheet'])) {
+		pay_sheet();
+	}
+
 	// REGISTER USER
 	function register(){
 		global $db, $errors;
@@ -128,6 +132,11 @@
 				array_push($errors, "Wrong username/password combination");
 			}
 		}
+	}
+
+	// LOGIN USER
+	function pay_sheet(){
+		header("location: pay_sheet.php");
 	}
 
 	function isLoggedIn()

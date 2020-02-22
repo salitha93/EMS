@@ -39,7 +39,7 @@
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
 						<br>
-						<a href="paysheet.php?paysheet='1'" style="color: red;">pay-sheet</a>
+						<a href="index.php?paysheet='1'" style="color: red;">pay-sheet</a>
 						<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
 					</small>
