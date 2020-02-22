@@ -41,6 +41,10 @@
 						<br>
 						<a href="index.php?paysheet='1'" style="color: red;">pay-sheet</a>
 						<br>
+						<a href="index.php?apply_leave='1'" style="color: red;">leave-application</a>
+						<br>
+						<a href="index.php?over_time='1'" style="color: red;">over-time</a>
+						<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
 					</small>
 

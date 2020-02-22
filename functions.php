@@ -29,6 +29,14 @@
 		pay_sheet();
 	}
 
+	if (isset($_GET['apply_leave'])) {
+		apply_leave();
+	}
+
+	if (isset($_GET['over_time'])) {
+		apply_leave();
+	}
+
 	// REGISTER USER
 	function register(){
 		global $db, $errors;
@@ -137,6 +145,15 @@
 	// LOGIN USER
 	function pay_sheet(){
 		header("location: pay_sheet.php");
+	}
+
+	// LOGIN USER
+	function apply_leave(){
+		header("location: leave_application.php");
+	}
+
+	function over_time(){
+		header("location: over_time.php");
 	}
 
 	function isLoggedIn()
