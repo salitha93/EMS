@@ -6,9 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
 	<div class="header">
-		<h2>Login</h2>
+		<h2>Employee Management System</h2>
 	</div>
 	
 	<form method="post" action="login.php">

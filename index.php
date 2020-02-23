@@ -45,6 +45,8 @@
 						<br>
 						<a href="index.php?over_time='1'" style="color: red;">over-time</a>
 						<br>
+						<a href="loan_application.php" style="color: red;">loan</a>
+						<br>
 						<a href="index.php?logout='1'" style="color: red;">logout</a>
 					</small>
 

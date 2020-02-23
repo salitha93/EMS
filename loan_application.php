@@ -9,20 +9,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PAY_SHEET</title>
+	<title>Loan Application</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Pay Sheet</h2>
+		<h2>Loan Application</h2>
 	</div>
 	<div class="content">
 		<!-- logged in user information -->
-		<div class="pay_sheet">
+		<div class="loan_application">
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['username']; ?></strong>
                     <small>
+                        <br>
+						<a href="loan_application.php" style="color: red;">submit</a>
 						<br>
 						<a href="index.php" style="color: red;">back</a>
 					</small>

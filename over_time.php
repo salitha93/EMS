@@ -9,19 +9,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PAY_SHEET</title>
+	<title>OVER_TIME</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Pay Sheet</h2>
+		<h2>Over Time</h2>
 	</div>
 	<div class="content">
 		<!-- logged in user information -->
-		<div class="leave_application">
+		<div class="over_time">
 			<div>
 				<?php  if (isset($_SESSION['user'])) : ?>
 					<strong><?php echo $_SESSION['user']['username']; ?></strong>
+                    <small>
+                        <br>
+						<a href="over_time.php" style="color: red;">submit</a>
+						<br>
+						<a href="index.php" style="color: red;">back</a>
+					</small>
 				<?php endif ?>
 			</div>
 		</div>
