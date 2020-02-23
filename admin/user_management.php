@@ -49,9 +49,9 @@
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
 						<br>
-                        <a href="home.php?logout='1'" style="color: red;">logout</a>
+                        <a href="home.php" style="color: red;">Back</a>
                         <br>
-                        <a href="user_management.php"> User Management</a>
+                        <a href="create_user.php"> Add user</a>
                         <br>
 						<a href="leave_management.php">Leave Management</a>
 					</small>
