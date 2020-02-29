@@ -39,6 +39,14 @@
 			<input type="date" name="ot-date">
 		</div>
 		<div class="input-group">
+			<label>Position</label>
+			<select name="user_type" id="user_type" >
+				<option value="management-assistant">Mangement Assistant</option>
+				<option value="development-officer">Development Officer</option>
+				<option value="user">Management Assistant</option>
+			</select>
+		</div>
+		<div class="input-group">
 			<button type="submit" class="btn" name="submit_btn"> Submit</button>
 			<button type="submit" class="btn" name="back_btn"> Back</button>
 		</div>

@@ -55,7 +55,7 @@
 			<input type="text" name="total-salary">
 		</div>
 		<div class="abcd">
-			<button type="submit" class="btn" name="login_btn">Back</button>
+			<button type="submit" class="btn" name="logout_btn">Logout</button>
 		</div>
 		</div>
 	</div>

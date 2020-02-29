@@ -10,15 +10,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Over Time</title>
+	<title>Salary Information</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Over Time</h2>
+		<h2>Salary Information</h2>
 	</div>
 	
-	<form method="post" action="leave_management.php">
+	<form method="post" action="salary.php">
 
 		<?php echo display_error(); ?>
 
@@ -27,12 +27,20 @@
 			<input type="text" name="username" value="">
 		</div>
 		<div class="input-group">
-			<label>Date</label>
-			<input type="date" name="ot-date">
+			<label>Month</label>
+			<input type="text" name="month" value="">
 		</div>
 		<div class="input-group">
-			<label>Hours</label>
-			<input type="text" name="username" value="">
+			<label>Basic Salary(Rs)</label>
+			<input type="text" name="basic-salary" value="">
+		</div>
+		<div class="input-group">
+			<label>Allowances(Rs)</label>
+			<input type="text" name="allowances" value="">
+		</div>
+		<div class="input-group">
+			<label>OT Hours</label>
+			<input type="text" name="ot-hours" value="">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="submit_btn"> Submit</button>
