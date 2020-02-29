@@ -47,7 +47,7 @@
 					{
 						if (mysqli_num_rows($results1) == 1)
 						{
-							$query2 = "UPDATE leaves SET emp_id='$emp_id', leave_reason='$reason'
+							$query2 = "UPDATE leaves SET leave_reason='$reason'
 							WHERE emp_id=$emp_id AND leave_date='$date'";
 							if (!(mysqli_query($conn, $query2))) 
 							{
@@ -57,7 +57,7 @@
 						else
 						{
 							$query3 = "INSERT INTO leaves (emp_id, leave_date, leave_reason) 
-								VALUES('$emp_id', '$date', '$reason')";
+								VALUES($emp_id, '$date', '$reason')";
 							
 							if (!(mysqli_query($conn, $query3))) 
 							{
