@@ -10,12 +10,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Leaves</title>
+	<title>Over Time</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Leaves</h2>
+		<h2>Over Time</h2>
 	</div>
 	
 	<form method="post" action="leave_management.php">
@@ -27,11 +27,11 @@
 			<input type="text" name="username" value="">
 		</div>
 		<div class="input-group">
-			<label>Leave Date</label>
-			<input type="date" name="leave-date">
+			<label>Date</label>
+			<input type="date" name="ot-date">
 		</div>
 		<div class="input-group">
-			<label>Reason</label>
+			<label>Hours</label>
 			<input type="text" name="username" value="">
 		</div>
 		<div class="input-group">

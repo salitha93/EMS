@@ -11,7 +11,7 @@ body {
 	width: 40%;
 	margin: 50px auto 0px;
 	color: white;
-	background: #5F9EA0;
+	background: #003366;
 	text-align: center;
 	border: 1px solid #B0C4DE;
 	border-bottom: none;
@@ -22,14 +22,17 @@ form, .content {
 	width: 40%;
 	margin: 0px auto;
 	padding: 20px;
-	border: 1px solid #B0C4DE;
+	border: 1px solid #003366;
 	background: white;
 	border-radius: 0px 0px 10px 10px;
+}
+.input-group2 {
+	margin: 10px 0px 10px 0px;
+	text-align: center;
 }
 .input-group {
 	margin: 10px 0px 10px 0px;
 }
-
 .input-group label {
 	display: block;
 	text-align: left;
@@ -42,6 +45,22 @@ form, .content {
 	font-size: 16px;
 	border-radius: 5px;
 	border: 1px solid gray;
+}
+.abcd {
+	margin: 10px 0px 10px 0px;
+}
+
+.abcd label {
+	text-align: left;
+	margin: 3px;
+	font-size: 16px;
+}
+.abcd input {
+	border-radius: 5px;
+	width: 80%;
+	border: 1px solid gray;
+	font-size: 16px;
+	margin-left: 5%;
 }
 #user_type {
 	height: 40px;
@@ -56,9 +75,19 @@ form, .content {
 	padding: 10px;
 	font-size: 15px;
 	color: white;
-	background: #5F9EA0;
+	background: #003366;
 	border: none;
 	border-radius: 5px;
+	width: 30%;
+}
+.btn_home {
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #003366;
+	border: none;
+	border-radius: 5px;
+	width: 60%;
 }
 .error {
 	width: 92%; 

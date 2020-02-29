@@ -1,10 +1,10 @@
 <?php 
 	include('../functions.php');
 
-	if (!isAdmin()) {
+	/*if (!isAdmin()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: ../login.php');
-	}
+	}*/
 
 ?>
 <!DOCTYPE html>
@@ -12,14 +12,6 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
-	<style>
-	.header {
-		background: #003366;
-	}
-	button[name=register_btn] {
-		background: #003366;
-	}
-	</style>
 </head>
 <body>
 	<div class="header">
@@ -38,29 +30,24 @@
 			</div>
 		<?php endif ?>
 
-		<!-- logged in user information -->
-		<div class="profile_info">
-			<img src="../images/admin_profile.png"  >
-
-			<div>
-				<?php  if (isset($_SESSION['user'])) : ?>
-					<strong><?php echo $_SESSION['user']['username']; ?></strong>
-
-					<small>
-						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i> 
-						<br>
-                        <a href="home.php?logout='1'" style="color: red;">logout</a>
-                        <br>
-                        <a href="user_management.php"> User Management</a>
-                        <br>
-						<a href="leave_management.php">Leave Management</a>
-					</small>
-				<?php endif ?>
+		<div>
+			<strong><?php echo $_SESSION['user']['username']; ?></strong>
+			<div class="input-group2">
+				<button type="submit" class="btn_home" name="submit_create_user_btn"> Create User</button>
+			</div>
+			<div class="input-group2">
+				<button type="submit" class="btn_home" name="submit_employee_info_btn"> Employee Information</button>
+			</div>
+			<div class="input-group2">
+				<button type="submit" class="btn_home" name="submit_leave_btn"> Leaves</button>
+			</div>
+			<div class="input-group2">
+				<button type="submit" class="btn_home" name="submit_loan_btn"> Loans</button>
+			</div>
+			<div class="input-group2">
+				<button type="submit" class="btn_home" name="submit_ot_btn"> Over Time</button>
 			</div>
 		</div>
-
-
-
 	</div>
 		
 </body>

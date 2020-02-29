@@ -10,15 +10,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Leaves</title>
+	<title>Loans</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 	<div class="header">
-		<h2>Leaves</h2>
+		<h2>Loans</h2>
 	</div>
 	
-	<form method="post" action="leave_management.php">
+	<form method="post" action="loan_management.php">
 
 		<?php echo display_error(); ?>
 
@@ -27,12 +27,16 @@
 			<input type="text" name="username" value="">
 		</div>
 		<div class="input-group">
-			<label>Leave Date</label>
-			<input type="date" name="leave-date">
+			<label>Amount(Rs)</label>
+			<input type="text" name="amount" value="">
 		</div>
 		<div class="input-group">
-			<label>Reason</label>
-			<input type="text" name="username" value="">
+			<label>Interest Rate(%)</label>
+            <input type="text" name="i_rate" value="">
+        </div>
+        <div class="input-group">
+			<label>Number of Installments(Months)</label>
+            <input type="text" name="installments" value="">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="submit_btn"> Submit</button>

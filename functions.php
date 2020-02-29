@@ -2,7 +2,7 @@
 	session_start();
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'admin', 'admin4321', 'php_tuts_login_form_2');
+	$db = mysqli_connect('localhost', 'admin', 'admin4321', 'EMS');
 
 	// variable declaration
 	$username = "";
@@ -10,14 +10,18 @@
 	$errors   = array(); 
 
 	// call the register() function if register_btn is clicked
-	if (isset($_POST['register_btn'])) {
-		register();
-	}
+	//if (isset($_POST['register_btn'])) {
+	//	register();
+	//}
 
 	// call the login() function if register_btn is clicked
 	if (isset($_POST['login_btn'])) {
 		login();
 	}
+
+	/*if ($_POST['leave_type_add']) {
+		leave_type_add();
+	}*/
 
 	if (isset($_GET['logout'])) {
 		session_destroy();
@@ -140,6 +144,15 @@
 				array_push($errors, "Wrong username/password combination");
 			}
 		}
+	}
+
+	function leave_type_add(){
+		
+		$leave_type =  $_POST['leave_type'];
+
+		$query = "INSERT INTO leave_types (leave_type_name) 
+						VALUES ('abcde')";
+		mysqli_query($db, $query);
 	}
 
 	// LOGIN USER
