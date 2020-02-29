@@ -36,7 +36,7 @@
 				}else{
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
-					header("Location: register.php");
+					header("Location: pay_sheet.php");
 				}
 			}else {
 				array_push($errors, "Wrong username/password combination");

@@ -28,6 +28,16 @@
 		header("location: loans.php");
 	}
 
+	if (isset($_POST['submit_salary_btn'])) {
+		header("location: salary_information.php");
+	}
+
+	if (isset($_POST['submit_logout_btn'])) {
+		session_destroy();
+		unset($_SESSION['user']);
+		header("location: ../login.php");
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,10 +63,10 @@
 			<button type="submit" class="btn_home" name="submit_loan_btn"> Loans</button>
 		</div>
 		<div class="input-group2">
-			<button type="submit" class="btn_home" name="submit_ot_btn"> Over Time</button>
+			<button type="submit" class="btn_home" name="submit_salary_btn"> Salary Information</button>
 		</div>
 		<div class="input-group2">
-			<button type="submit" class="btn_home" name="submit_logout"> Logout</button>
+			<button type="submit" class="btn_home" name="submit_logout_btn"> Logout</button>
 		</div>
 	</form>
 		

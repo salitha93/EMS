@@ -1,10 +1,16 @@
 <?php 
-	include('functions.php');
+	include('db.php');
 
 	/*if (!isLoggedIn()) {
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
 	}*/
+	if (isset($_POST['submit_logout_btn'])) {
+		session_destroy();
+		unset($_SESSION['user']);
+		header("location: login.php");
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +22,7 @@
 	<div class="header">
 		<h2>Pay Sheet</h2>
 	</div>
-	<div class="content">
+	<form method="post" action="pay_sheet.php">
 		<!-- logged in user information -->
 		<div class="abcd">
 			<label>Employee Name</label><br>
@@ -55,9 +61,9 @@
 			<input type="text" name="total-salary">
 		</div>
 		<div class="abcd">
-			<button type="submit" class="btn" name="logout_btn">Logout</button>
+			<button type="submit" class="btn" name="submit_logout_btn">Logout</button>
 		</div>
 		</div>
-	</div>
+	</form>
 </body>
 </html>
