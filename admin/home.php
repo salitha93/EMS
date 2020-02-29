@@ -16,6 +16,10 @@
 		header("location: create_user.php");
 	}
 
+	if (isset($_POST['submit_employee_info_btn'])) {
+		header("location: employee_information.php");
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
