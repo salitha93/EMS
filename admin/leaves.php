@@ -41,14 +41,14 @@
 					$logged_in_user = mysqli_fetch_assoc($results);
 					$emp_id			= $logged_in_user['emp_id'];
 					
-					$query1 = "SELECT * FROM leaves WHERE leave_date='$date' LIMIT 1";
+					$query1 = "SELECT * FROM leaves WHERE emp_id=$emp_id AND leave_date='$date' LIMIT 1";
 					
 					if ($results1 = mysqli_query($conn, $query1)) 
 					{
 						if (mysqli_num_rows($results1) == 1)
 						{
 							$query2 = "UPDATE leaves SET emp_id='$emp_id', leave_reason='$reason'
-							WHERE date='$date'";
+							WHERE emp_id=$emp_id AND leave_date='$date'";
 							if (!(mysqli_query($conn, $query2))) 
 							{
 								echo "Error: " . $sql . "<br>" . mysqli_error($conn);

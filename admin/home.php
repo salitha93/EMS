@@ -24,6 +24,10 @@
 		header("location: leaves.php");
 	}
 
+	if (isset($_POST['submit_loan_btn'])) {
+		header("location: loans.php");
+	}
+
 ?>
 <!DOCTYPE html>
 <html>
