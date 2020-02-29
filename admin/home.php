@@ -20,6 +20,10 @@
 		header("location: employee_information.php");
 	}
 
+	if (isset($_POST['submit_leave_btn'])) {
+		header("location: leaves.php");
+	}
+
 ?>
 <!DOCTYPE html>
 <html>

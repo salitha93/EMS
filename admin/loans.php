@@ -18,7 +18,7 @@
 		<h2>Loans</h2>
 	</div>
 	
-	<form method="post" action="loan_management.php">
+	<form method="post" action="loans.php">
 
 		<?php echo display_error(); ?>
 
