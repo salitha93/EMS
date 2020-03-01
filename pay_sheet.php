@@ -51,12 +51,31 @@
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
 
-		$query2 = "SELECT * FROM leaves WHERE emp_id=$employee_id AND leave_month='$month'";
+		$query3 = "SELECT * FROM leaves WHERE emp_id=$employee_id AND leave_month='$month'";
 					
-		if ($results2 = mysqli_query($conn, $query2)) 
+		if ($results3 = mysqli_query($conn, $query3)) 
 		{
-			$leave_count     = mysqli_num_rows($results2);
+			$leave_count     = mysqli_num_rows($results3);
 			$leave_deduction = ($basic_salary)*($leave_count)/30;
+		}
+		else
+		{
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+
+		$query4 = "SELECT * FROM loans WHERE emp_id=$employee_id";
+					
+		if ($results4 = mysqli_query($conn, $query4)) 
+		{
+			if (mysqli_num_rows($results4) == 1)
+			{
+				$assoc2 		 = mysqli_fetch_assoc($results4);
+				$amount   		 = $assoc2['amount'];
+				$i_rate			 = $assoc2['i_rate'];
+				$installments    = $assoc2['installments'];
+
+				$loan_deduction = ((($amount)*($i_rate + 100))/100)*($installments/12)/$installments;
+			}
 		}
 		else
 		{
