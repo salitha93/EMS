@@ -6,14 +6,30 @@
 		header('location: login.php');
 	}*/
 	$employee_id  		 =  $_SESSION['user']['emp_id'];
-	$employee_name  	 =  "";
-	$month  			 =  "";
+	$employee_name  	 =  "Not Found";
+	$month  			 =  "February";
 	$basic_salary   	 =  0;
 	$over_time_payment   =  0;
 	$allowances			 = 	0;
 	$leave_deduction	 =	0;
 	$loan_deduction	 	 =	0;
 	$total_salary		 =	0;
+
+	//Querying from DB
+	$query1 = "SELECT * FROM employees WHERE emp_id=$employee_id LIMIT 1";
+					
+	if ($results1 = mysqli_query($conn, $query1)) 
+	{
+		if (mysqli_num_rows($results1) == 1)
+		{
+			$assoc1 = mysqli_fetch_assoc($results1);
+			$employee_name = $assoc1['emp_name'];
+		}
+	}
+	else
+	{
+		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
 	
 
 	$total_earnings  = $basic_salary + $over_time_payment + $allowances;
@@ -43,7 +59,7 @@
 		<!-- logged in user information -->
 		<div class="abcd">
 			<label>Employee Name</label><br>
-			<input type="text" name="employee_name" >
+			<input type="text" name="employee_name" value="<?php echo $employee_name ?>">
 		</div>
 		<div class="abcd">
 			<label>Employee ID</label><br>
