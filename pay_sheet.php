@@ -7,7 +7,7 @@
 	}*/
 	$employee_id  		 =  $_SESSION['user']['emp_id'];
 	$employee_name  	 =  "Not Found";
-	$month  			 =  "February";
+	$month  			 =  $_POST['month'];
 	$basic_salary   	 =  0;
 	$over_time_payment   =  0;
 	$allowances			 = 	0;
@@ -31,6 +31,38 @@
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
+	if (isset($_POST['submit_generate_btn'])) 
+	{
+		$query2 = "SELECT * FROM salaries WHERE emp_id=$employee_id AND salary_month='$month' LIMIT 1";
+					
+		if ($results2 = mysqli_query($conn, $query2)) 
+		{
+			if (mysqli_num_rows($results2) == 1)
+			{
+				$assoc2 			 = mysqli_fetch_assoc($results2);
+				$basic_salary   	 = $assoc2['basic_salary'];
+				$allowances			 = $assoc2['allowances'];
+				$over_time_hours   	 = $assoc2['ot_hours'];
+				$over_time_payment   = $over_time_hours * 500;
+			}
+		}
+		else
+		{
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+
+		$query2 = "SELECT * FROM leaves WHERE emp_id=$employee_id AND leave_month='$month'";
+					
+		if ($results2 = mysqli_query($conn, $query2)) 
+		{
+			$leave_count     = mysqli_num_rows($results2);
+			$leave_deduction = ($basic_salary)*($leave_count)/30;
+		}
+		else
+		{
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+	}
 
 	$total_earnings  = $basic_salary + $over_time_payment + $allowances;
 	$total_deduction = $leave_deduction + $loan_deduction;
@@ -67,7 +99,21 @@
 		</div>
 		<div class="abcd">
 			<label>Month</label><br>
-			<input type="text" name="month"  value="<?php echo $month ?>">
+			<select name="month">
+				<option value="January">January</option>
+				<option value="February">February</option>
+				<option value="March">March</option>
+				<option value="April">April</option>
+				<option value="May">May</option>
+				<option value="June">June</option>
+				<option value="July">July</option>
+				<option value="Augest">Augest</option>
+				<option value="September">September</option>
+				<option value="October">October</option>
+				<option value="November">November</option>
+				<option value="December">December</option>
+			</select>
+		</div>
 		</div>
 		<div class="abcd">
 			<label>Basic Salary(Rs)</label><br>
@@ -95,6 +141,7 @@
 		</div>
 		<div class="abcd">
 			<button type="submit" class="btn" name="submit_logout_btn">Logout</button>
+			<button type="submit" class="btn" name="submit_generate_btn">Generate</button>
 		</div>
 		</div>
 	</form>

@@ -13,6 +13,7 @@
 	$username    =  $_POST['username'];
 	$emp_id		 =	$_POST['emp_id'];
 	$date 	 	 =  $_POST['leave-date'];
+	$leave_month =  $_POST['leave-month'];
 	$reason  	 =  $_POST['reason'];
 
 	if(isset($_POST['submit_btn']))
@@ -47,7 +48,7 @@
 					{
 						if (mysqli_num_rows($results1) == 1)
 						{
-							$query2 = "UPDATE leaves SET leave_reason='$reason'
+							$query2 = "UPDATE leaves SET leave_reason='$reason', leave_month='$leave_month'
 							WHERE emp_id=$emp_id AND leave_date='$date'";
 							if (!(mysqli_query($conn, $query2))) 
 							{
@@ -56,8 +57,8 @@
 						}
 						else
 						{
-							$query3 = "INSERT INTO leaves (emp_id, leave_date, leave_reason) 
-								VALUES($emp_id, '$date', '$reason')";
+							$query3 = "INSERT INTO leaves (emp_id, leave_date, leave_month, leave_reason) 
+								VALUES($emp_id, '$date', '$leave_month', '$reason')";
 							
 							if (!(mysqli_query($conn, $query3))) 
 							{
@@ -126,6 +127,23 @@
 		<div class="input-group">
 			<label>Leave Date</label>
 			<input type="date" name="leave-date">
+		</div>
+		<div class="input-group">
+			<label>Leave Month</label>
+			<select name="leave-month" id="user_type" >
+				<option value="January">January</option>
+				<option value="February">February</option>
+				<option value="March">March</option>
+				<option value="April">April</option>
+				<option value="May">May</option>
+				<option value="June">June</option>
+				<option value="July">July</option>
+				<option value="Augest">Augest</option>
+				<option value="September">September</option>
+				<option value="October">October</option>
+				<option value="November">November</option>
+				<option value="December">December</option>
+			</select>
 		</div>
 		<div class="input-group">
 			<label>Reason</label>

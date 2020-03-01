@@ -62,6 +62,13 @@ form, .content {
 	font-size: 16px;
 	margin-left: 5%;
 }
+.abcd select {
+	border-radius: 5px;
+	width: 80%;
+	border: 1px solid gray;
+	font-size: 16px;
+	margin-left: 5%;
+}
 #user_type {
 	height: 40px;
 	width: 98%;
