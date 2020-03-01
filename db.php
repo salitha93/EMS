@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 	$dbhost = "localhost";
 	$dbuser = "admin";
 	$dbpass = "admin4321";
